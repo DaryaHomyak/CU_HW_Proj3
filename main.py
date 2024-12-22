@@ -5,6 +5,7 @@ from dash import dcc, html
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 
+
 app = Flask(__name__)
 
 BASE_URL = "http://dataservice.accuweather.com"
