@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта прогноза погоды</title>
+</head>
+<body>
+
+<!-- Интерактивная карта -->
+<div id="map"></div>
+<div id="weather-reports"></div>
+
+<a href="/">Назад</a>
+
+<script>
+   const storeData = {
+       'start_lat': "{{ start_lat }}",
+       'start_lon': "{{ start_lon }}",
+       'end_lat': "{{ end_lat }}",
+       'end_lon': "{{ end_lon }}",
+       'report_start': "{{ report_start }}",
+       'report_end': "{{ report_end }}"
+   };
+
+   // Устанавливаем данные в хранилище Dash через JavaScript
+   const storeElement = document.createElement('div');
+   storeElement.id = 'store-data';
+   storeElement.dataset.data = JSON.stringify(storeData);
+   document.body.appendChild(storeElement);
+</script>
+
+</body>
+</html>

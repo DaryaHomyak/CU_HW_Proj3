@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погодный сервис</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img-fotki.yandex.ru/get/15560/29330465.30f/0_10672f_6895ecf0_XXXL.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #6f4c3e;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8),
+                         -1px -1px 0px rgba(255, 255, 255, 0.8),
+                         1px -1px 0px rgba(255, 255, 255, 0.8),
+                         -1px 1px 0px rgba(255, 255, 255, 0.8);
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto; /* Отступ сверху */
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #6f4c3e;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6f4c3e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5b3e31; /* Темнее при наведении */
+        }
+        .map-container {
+            margin-top: 30px; /* Отступ сверху для карты */
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать в погодный сервис!</h1>
+    <form action="/weather" method="post">
+        <h2>Введите координаты:</h2>
+        <label for="lat_st">Широта начальной точки:</label>
+        <input type="text" name="lat_st" required placeholder="Например, 55.7558"><br>
+
+        <label for="lon_st">Долгота начальной точки:</label>
+        <input type="text" name="lon_st" required placeholder="Например, 37.6173"><br>
+
+        <label for="lat_end">Широта конечной точки:</label>
+        <input type="text" name="lat_end" required placeholder="Например, 59.9343"><br>
+
+        <label for="lon_end">Долгота конечной точки:</label>
+        <input type="text" name="lon_end" required placeholder="Например, 30.3351"><br>
+
+        <button type="submit">Получить прогноз</button>
+    </form>
+
+    <!-- Контейнер для отображения карты -->
+    <div class="map-container" id="map-container">
+        <!-- Здесь будет отображаться интерактивная карта -->
+    </div>
+
+</body>
+</html>
